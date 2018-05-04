@@ -1,0 +1,30 @@
+
+h4{
+  font-weight: bold;
+}
+.container{
+padding: 180px;
+}
+
+
+.linechartcontainer{
+float: right;
+}
+.ul-list-container{
+  list-style-type: none;
+}
+.button{
+  float: right;
+  position: absolute;
+  margin-top:350px;
+  margin-left: 300px;
+padding-bottom: 30px;
+  width: 200px;
+height: 100px;
+}
+.h-four{
+  white-space: normal;
+  display: block;
+  word-wrap: break-word;
+
+}
