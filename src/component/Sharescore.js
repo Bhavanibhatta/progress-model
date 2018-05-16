@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {Button,Popover, Glyphicon,Overlay,ButtonToolbar} from 'react-bootstrap';
-import {FacebookShareButton,LinkedinShareButton} from 'react-share';
+import { Glyphicon,ButtonToolbar,Modal} from 'react-bootstrap';
+import {FacebookIcon,FacebookShareButton,
+        LinkedinShareButton, LinkedinIcon} from 'react-share';
 
 import './Sharescore.css';
 
@@ -10,45 +11,57 @@ class Sharescore extends Component{
 
 
 
-  shareonFacebook(){
-
-    console.log(" sharing on facebook");
-
-  }
-
-  shareonLinkedIn(){
-
-    console.log("sharing on LinkedIn");
-  }
-
 
 
   render(){
+
+
+    let pageurl= "https://github.com";
+    let title = 'My score is:';
     return(
+
+
 
       <ButtonToolbar>
 
-      <a href="#"  ><Glyphicon  className = "glyphicon" glyph ="share"  onClick ={this.props.clicked}/> </a>
+         <Glyphicon  className = "glyphicon" glyph ="share"  onClick ={this.props.clicked}/> 
 
-
-             <Overlay
+            {/* <Overlay
                show={this.props.showed}
-
                placement="bottom"
-               container={this}
+               container={this}   >
 
-             >
-               <Popover id="popover-contained" title="Share your score on: ">
-          <div className = "button-contained" >
+                  <Popover id="popover-contained" title="Share your score on: "> */}
+                  <Modal show={this.props.showed} onHide={this.props.close} className="parentmodal">
+                   <Modal.Header closeButton>
+                   <Modal.Title>Share score on: </Modal.Title>
+                   </Modal.Header>
+                   <Modal.Body>
+                     <div className = "button-contained" >
 
-              <Button onClick = {this.shareonFacebook}>facebook</Button>
+                      <div className ="social-icons">
 
-              <Button className="linkedin-button" onClick = {this.shareonLinkedIn}>LinkedIn</Button>
-              </div>
-               </Popover>
-             </Overlay>
+                        <FacebookShareButton
+                           url ={pageurl}
+                           quote = {title}
+                           className="facebooksharebutton">
+                          <FacebookIcon size={32} className = "facebookicon" />
+                      </ FacebookShareButton>
+                      <LinkedinShareButton
+                         url={pageurl}
+                         quote={title}
+                         className="linkedinsharebutton">
+                         <LinkedinIcon size ={32} className="linkedinicon" />
+                         </LinkedinShareButton>
 
-           </ButtonToolbar>
+                      </div>
+                    </div>
+                    </Modal.Body>
+                    </Modal>
+              { /*</Popover>
+             </Overlay>*/}
+
+      </ButtonToolbar>
 
     );
   }

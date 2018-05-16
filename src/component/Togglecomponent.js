@@ -29,6 +29,7 @@ import Sharescore from './Sharescore';
         this.getDetails = this.getDetails.bind(this);
         this.handleClose = this.handleClose.bind(this);
         this.sharealert = this.sharealert.bind(this);
+        this.closeHandle =this.closeHandle.bind(this);
      }
 
      getDetails(){
@@ -37,6 +38,9 @@ import Sharescore from './Sharescore';
      }
      handleClose(){
        this.setState({showModal: false});
+     }
+     closeHandle(){
+       this.setState({show : false});
      }
      sharealert(e){
           this.setState(prevstate => ({show:!prevstate.show}));
@@ -62,7 +66,7 @@ import Sharescore from './Sharescore';
                  </Modal.Header>
                  <Modal.Body>
 
-                    <Sharescore clicked={this.sharealert} showed={this.state.show} />
+                    <Sharescore clicked={this.sharealert} close={this.closeHandle} showed={this.state.show} />
 
 
 

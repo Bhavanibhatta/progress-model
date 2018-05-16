@@ -2,7 +2,7 @@
 
   float: right;
   font-size: 20px;
-
+cursor:pointer;
 
 }
 #popover-contained{
@@ -11,9 +11,31 @@
   padding-bottom: 10px;
 display: inline-block;
 }
-.button-contained{
-  border-radius: 50px;
+
+.social-icons{
+
+  display: inline-flex;
+  margin-left: 20px;
+
 }
-.linkedin-button{
-  margin-left: 4px;
+
+.facebookicon{
+    border-radius: 3px 8px;
+
+}
+.facebookicon:hover{
+  background-color: black;
+}
+
+.linkedinicon{
+  margin-left: 30px;
+  border-radius: 3px 8px;
+}
+
+.parentmodal{
+box-sizing:content-box;
+  margin-left: 500px;
+  margin-top: 130px;
+
+
 }
